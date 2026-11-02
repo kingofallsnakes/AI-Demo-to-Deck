@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PulseCheck Demo</title>
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --ink: #1a1a1a;
+      --accent: #1f6f5b;
+      --card: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Georgia, serif;
+      background:
+        radial-gradient(circle at 10% 10%, #dfece6 0%, transparent 40%),
+        radial-gradient(circle at 90% 0%, #f0e6d6 0%, transparent 35%),
+        var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    header {
+      padding: 2.5rem 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2.6rem;
+      margin: 0 0 0.4rem;
+      letter-spacing: -0.03em;
+    }
+    .tag {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 2rem 3rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid #ddd2c2;
+      border-radius: 18px;
+      padding: 1.25rem 1.4rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    }
+    ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+    li { margin: 0.45rem 0; }
+    button {
+      margin-top: 1rem;
+      background: var(--accent);
+      color: white;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .status { margin-top: 0.8rem; min-height: 1.2rem; color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="tag">Sample demo for Demo-to-Deck</div>
+    <h1>PulseCheck</h1>
+    <p>A calm daily checklist that helps teams spot blockers before standup.</p>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>Today</h2>
+      <ul id="list">
+        <li>Review open pull requests</li>
+        <li>Confirm staging deploy health</li>
+        <li>Note one customer risk</li>
+      </ul>
+      <button id="done" type="button">Mark standup ready</button>
+      <div class="status" id="status"></div>
+    </section>
+    <section class="panel">
+      <h2>Why this demo exists</h2>
+      <p>Use this page as a safe target for screenshots while generating a pitch deck. No accounts, no APIs, no secrets.</p>
+    </section>
+  </main>
+  <script>
+    document.getElementById("done").addEventListener("click", function () {
+      document.getElementById("status").textContent = "Standup packet ready — nice work.";
+    });
+  </script>
+</body>
+</html>
